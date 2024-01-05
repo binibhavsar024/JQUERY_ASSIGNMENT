@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<style>
+    .ancestors * {
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+    }
+</style>
+
+<body>
+    <div class="ancestors">body (great-great-gradparent)
+    <div style="width: 450px;"> div(great-grandparent)
+        <ul style="width: 400px;">ul(grand-parent)
+            <li style="width: 350px;">li(direct-parent)
+                <span style="width: 300px;">span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $("span").parents().css({ "color": "red", "border": "solid 2px red" })
+    })
+</script>
+</body>
+
+</html>
